@@ -1,0 +1,69 @@
+<div class="container">
+   <!-- <h1>Hello {{currentUser.firstName}}, where are you taking these fine passengers</h1> -->
+        <h1>{{currentUser.firstName}}, Where are you taking these fine passengers</h1>
+
+    <form>
+
+        <!-- The hidden data -->
+
+    <div class="form-group">
+        <input type="hidden" class="form-control" id="driver"  [(ngModel)]="journey.driver.username" required>
+    </div>
+
+          <!-- Let's pre-populate based on timestamp-->     
+
+    <div class="form-group">
+        <input type="hidden" class="form-control" id="date" [(ngModel)]="journey.dateOfJourney" required>
+      </div>
+
+    <!-- Passenger details auto-populate once they scan their id card - how to replicate this --> 
+
+    <div class="form-group">
+        <input type="hidden" class="form-control" id="forename" [(ngModel)]="journey.passenger.forename" required>
+      </div>
+
+    <div class="form-group">
+        <input type="hidden" class="form-control" id="surname" [(ngModel)]="journey.passenger.surname" required>
+      </div>
+
+        <div class="form-group">
+        <input type="hidden" class="form-control" id="phone" [(ngModel)]="journey.passenger.phone" required>
+      </div>
+
+              <div class="form-group">
+        <input type="hidden" class="form-control" id="addressNumber" [(ngModel)]="journey.passenger.address.number" required>
+      </div>
+
+                    <div class="form-group">
+        <input type="hidden" class="form-control" id="addressStreet" [(ngModel)]="journey.passenger.address.street" required>
+      </div>
+
+        <div class="form-group">
+        <input type="hidden" class="form-control" id="addressTown" [(ngModel)]="journey.passenger.address.town" required>
+      </div>
+
+        <div class="form-group">
+        <input type="hidden" class="form-control" id="addressCity" [(ngModel)]="journey.passenger.address.city" required>
+      </div>
+
+      <!-- Journey summary-->     
+
+    <!-- Can we populate the origin based on driver's gps location? -->     
+      <div class="form-group">
+        <label for="name">Origin</label>
+        <input type="text" class="form-control" id="origin" required>
+      </div>
+
+        <div class="form-group">
+        <label for="name">Destination</label>
+        <input type="text" class="form-control" id="destination" required>
+      </div> 
+
+        <div class="form-group">
+        <label for="name">Cost</label>
+        <input type="text" class="form-control" id="cost" required>
+      </div>
+
+      <button (click)="onSubmit(journey)" type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>

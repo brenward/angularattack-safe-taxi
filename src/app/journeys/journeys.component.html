@@ -1,0 +1,32 @@
+<div class="col-md-6 col-md-offset-3">
+    <h1>Hi {{currentUser.username}}!</h1>
+    <h3>Here is a list of your journeys:</h3>
+
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Driver</th>
+        <th>Date of Journey</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Cost</th>
+        <th>Passengers</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let journey of journeys">
+        <td>{{journey.driver}}</td>
+        <td>{{journey.dateOfJourney}}</td>
+        <td>{{journey.origin}}</td>
+        <td>{{journey.destination}}</td>
+        <td>€ {{journey.cost}}</td>
+        <td>{{journey.passengers.length}}</td>
+        <td><a [routerLink]="['/create-journey']" class="btn btn-primary">Edit</a></td>
+      </tr>
+    </tbody>
+  </table>
+    
+    <p><a [routerLink]="['/login']" class="btn btn-primary">Logout</a>
+    <a [routerLink]="['/']" class="btn btn-success">Home</a></p>
+</div>

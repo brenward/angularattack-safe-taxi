@@ -1,0 +1,21 @@
+<html>
+  <body class="centred">
+  <div class="container">
+    <h1>
+  <em>{{currentUser.username}}</em>, welcome to Safe-Taxi.
+</h1>
+<br/>
+<h2>What would you like to do?</h2>
+<br/>
+    <div class="row">
+        <div class="col-md-12">
+          <div class="ui-group-buttons">
+                <a [routerLink]="['/create-journey']" class="btn btn-success btn-lg">Create a new Taxi Journey</a>
+                <div class="or or-lg"></div>
+                <a [routerLink]="['/journeys']" class="btn btn-info btn-lg">View/Edit your saved Journeys</a>
+</div>
+        </div>
+    </div>
+  </div>
+  </body>
+</html>
